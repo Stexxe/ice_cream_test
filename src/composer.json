@@ -1,0 +1,17 @@
+{
+  "name": "ice_cream/test",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Aleksei Tirman",
+      "email": "aleksei.tirman@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"IceCream\\": "."}
+  },
+  "require": {
+    "mnapoli/front-yaml": "2.0.2",
+    "ext-json": "*"
+  }
+}

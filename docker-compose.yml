@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "7070:80"
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./src:/app
+  php:
+    build:
+      context: .
+      dockerfile: PHP.Dockerfile
+    volumes:
+      - ./src:/app
+      - ./docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+  composer:
+    image: composer:latest
+    working_dir: /app
+    command: composer install
+    depends_on:
+      - php
+    volumes:
+      - ./src:/app
