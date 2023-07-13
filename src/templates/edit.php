@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     <title>Edit <?= $name ?></title>
+    <style>
+        .CodeMirror {
+            max-height: 500px
+        }
+    </style>
 </head>
 <body>
 <h1 class="p-3"><?= $title ?></h1>
